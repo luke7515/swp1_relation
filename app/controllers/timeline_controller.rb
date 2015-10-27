@@ -33,7 +33,7 @@ class TimelineController < ApplicationController
         @name = @user.email
     end
     
-    def edit
+    def editcomment
         @comment = Comment.find(params[:id])
     end
     def update

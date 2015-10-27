@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/deletecomment' => 'timeline#deletecomment'
   post '/deleteblog' => 'timeline#deleteblog'
   post '/show' => 'timeline#show'
-  post '/editcomment' => 'timeline#edit'
+  post '/editcomment' => 'timeline#editcomment'
   post '/update' => 'timeline#update'
   
   
