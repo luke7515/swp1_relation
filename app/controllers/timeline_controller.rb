@@ -35,6 +35,7 @@ class TimelineController < ApplicationController
     
     def editcomment
         @comment = Comment.find(params[:id])
+        redirect_to :root
     end
     def update
         temp = Comment.find(params[:id])
