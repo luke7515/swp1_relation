@@ -23,11 +23,19 @@
                     <p>
                         <%= comment.msg %>
                     </p>
-                </blockquote>                
-                <%=form_tag '/deletecomment'%>
-                    <input type="hidden" name="deleteid" value="<%=comment.id%>">
-                    <input type="submit" value="댓글 삭제" class="btn btn-warning">
-                </form>
+                </blockquote>
+                <%if comment.user == current_user%>
+                    <%=form_tag '/deletecomment'%>
+                        <input type="hidden" name="deleteid" value="<%=comment.id%>">
+                        <input type="submit" value="댓글 삭제" class="btn btn-warning">
+                    </form>
+                <% end %>
+                <%if comment.user == current_user%>
+                    <%=form_tag '/editcomment' do%>
+                        <input type="hidden" name="editid" value="<%=comment.id%>">
+                        <input type="submit" value="댓글 수정" class="btn btn-warning">
+                    <% end %>
+                <% end %>
             </li>
         <% end %>
         </li>
