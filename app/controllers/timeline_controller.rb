@@ -32,5 +32,15 @@ class TimelineController < ApplicationController
         @user = User.find(params[:selectid])
         @name = @user.email
     end
+    
+    def edit
+        @comment = Comment.find(params[:id])
+    end
+    def update
+        temp = Comment.find(params[:id])
+        temp.msg = params[:naeyong]
+        temp.save
+        redirect_to :root
+    end
 
 end

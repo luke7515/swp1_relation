@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/deletecomment' => 'timeline#deletecomment'
   post '/deleteblog' => 'timeline#deleteblog'
   post '/show' => 'timeline#show'
-  
+  post '/editcomment' => 'timeline#edit'
+  post '/update' => 'timeline#update'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
