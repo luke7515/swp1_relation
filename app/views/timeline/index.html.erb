@@ -46,10 +46,7 @@
                     <input type="hidden" name="deleteid" value="<%=comment.id%>">
                     <input type="submit" value="댓글 삭제" class="btn btn-warning">
                 </form>
-                <%=form_tag '/editcomment'%>
-                    <input type="hidden" name="editid" value="<%=comment.id%>">
-                    <input type="submit" value="댓글 수정" class="btn btn-warning">
-                </form>
+
             </li>
         <% end %>
         </li>
