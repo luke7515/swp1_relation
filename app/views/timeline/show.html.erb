@@ -5,11 +5,12 @@
         <div class="well">
             <%=b.content%>  
         </div>
-
-        <%=form_tag '/deleteblog'%>
-            <input type="hidden" name="blog_id" value="<%=b.id%>">
-            <input type="submit" value="글 삭제" class="btn btn-danger">
-        </form>
+        <%if b.user == current_user%>
+            <%=form_tag '/deleteblog'%>
+                <input type="hidden" name="blog_id" value="<%=b.id%>">
+                <input type="submit" value="글 삭제" class="btn btn-danger">
+            </form>
+        <% end %>
         <%=form_tag '/comment'%>
             <input type="hidden" name="blog_id" value="<%=b.id%>">
             <input type="text" name="comment">
